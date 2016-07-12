@@ -51,6 +51,7 @@ public class chestScript : NetworkBehaviour {
     {
 		if (GameObject.Find ("GameMode").GetComponent<GameMode> ().currentGameMode == 1) {
 			body.useGravity = false;
+			body.isKinematic = true;
 			startPos = transformpos.position.y;
 			GameObject.Find ("LocalPlayer").GetComponent<Object_SyncPosition> ().CmdProvideSelectedToServer (gameObject);
 			GameObject.Find ("LocalPlayer").GetComponent<Object_SyncPosition> ().gravity = false;
@@ -72,6 +73,7 @@ public class chestScript : NetworkBehaviour {
     {
 		if (GameObject.Find ("GameMode").GetComponent<GameMode> ().currentGameMode == 1) {
 			body.useGravity = true;
+			body.isKinematic = false;
 			verticalOffset = 0;
 			GameObject.Find ("LocalPlayer").GetComponent<Object_SyncPosition> ().gravity = true;
 			GameObject.Find ("LocalPlayer").GetComponent<Object_SyncPosition> ().working = false;

@@ -44,6 +44,7 @@ public class Object_SyncPosition : NetworkBehaviour {
 	void UpdateGravity(bool gravity)
 	{
 		targetObject.GetComponent<Rigidbody> ().useGravity = gravity;
+		targetObject.GetComponent<Rigidbody> ().isKinematic = !gravity;
 		Debug.Log ("gravity updated to" + gravity);
 	}
 
