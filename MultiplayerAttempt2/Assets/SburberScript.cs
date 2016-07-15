@@ -5,6 +5,7 @@ using UnityEngine.Networking;
 public class SburberScript : NetworkBehaviour {
 	public GameObject crux;
 	public GameObject tote;
+	public GameObject alchemiter;
 	// Use this for initialization
 	void Start () {
 	
@@ -28,6 +29,13 @@ public class SburberScript : NetworkBehaviour {
 		//Debug.Log ("instantiating");
 		GameObject totem = Instantiate (tote);
 		NetworkServer.Spawn (totem);
+	}
+
+	[Command]
+	public void CmdInstantiateAlchemiter () {
+		//Debug.Log ("instantiating");
+		GameObject alch = Instantiate (alchemiter);
+		NetworkServer.Spawn (alch);
 	}
 
 }
